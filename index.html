@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Opening Note...</title>
+  <script>
+    window.onload = function() {
+      // Parse the target URL from the query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetAppUrl = urlParams.get('url');
+
+      if (targetAppUrl) {
+        // Force iOS to execute the deep link scheme
+        window.location.href = targetAppUrl;
+      } else {
+        document.body.innerText = "No destination link provided.";
+      }
+    };
+  </script>
+</head>
+<body style="font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f2f2f7;">
+  <p style="color: #8e8e93; font-size: 17px;">Opening Note...</p>
+</body>
+</html>
